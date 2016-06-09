@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://viacep.com.br/ws/01001000/json/"
+    },
+    "response": {
+      "body": "{\n  \"cep\": \"01001-000\",\n  \"logradouro\": \"Praça da Sé\",\n  \"complemento\": \"lado ímpar\",\n  \"bairro\": \"Sé\",\n  \"localidade\": \"São Paulo\",\n  \"uf\": \"SP\",\n  \"unidade\": \"\",\n  \"ibge\": \"3550308\",\n  \"gia\": \"1004\"\n}",
+      "headers": {
+        "Server": "nginx/1.8.1",
+        "Date": "Thu, 09 Jun 2016 01:06:44 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Max-Age": "86400",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": "Content-Type, X-Request-With, X-Requested-By",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Expires": "Thu, 09 Jun 2016 02:06:44 GMT",
+        "Cache-Control": "max-age=3600"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
