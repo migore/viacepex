@@ -1,6 +1,5 @@
-defmodule Viacepex do
+defmodule Viacepex.Cep do
   use HTTPoison.Base
-  @derive [Poison.Encoder]
   defstruct [:cep, :logradouro, :complemento, :bairro, :localidade, :uf, :unidade, :ibge, :gia]
 
   def process_url(cep) do
@@ -9,6 +8,6 @@ defmodule Viacepex do
 
   def process_response_body(body) do
     body
-    |> Poison.decode!(as: %Viacepex{})
+    |> Poison.decode!(keys: :atoms!)
   end
 end
