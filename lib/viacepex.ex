@@ -17,6 +17,8 @@ defmodule Viacepex do
   end
 
   def get!(cep) do
-    elem(get(cep), 1)
+    cep
+    |> get()
+    |> elem(1)
   end
 end

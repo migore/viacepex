@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://viacep.com.br/ws/91410490/json/"
+    },
+    "response": {
+      "body": "{\n  \"cep\": \"91410-490\",\n  \"logradouro\": \"Rua Olavo Dutra\",\n  \"complemento\": \"\",\n  \"bairro\": \"Partenon\",\n  \"localidade\": \"Porto Alegre\",\n  \"uf\": \"RS\",\n  \"unidade\": \"\",\n  \"ibge\": \"4314902\",\n  \"gia\": \"\"\n}",
+      "headers": {
+        "Server": "nginx/1.8.1",
+        "Date": "Sat, 18 Jun 2016 19:00:33 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Max-Age": "86400",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": "Content-Type, X-Request-With, X-Requested-By",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Expires": "Sat, 18 Jun 2016 20:00:33 GMT",
+        "Cache-Control": "max-age=3600"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
