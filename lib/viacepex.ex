@@ -1,5 +1,12 @@
 defmodule Viacepex do
 
+  def get(cep) when is_integer(cep) do
+    cep
+    |> Integer.to_string()
+    |> get()
+  end
+
+
   def get(cep) do
     case Viacepex.Cep.validate(cep) do
       :ok ->

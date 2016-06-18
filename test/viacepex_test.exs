@@ -13,5 +13,12 @@ defmodule ViacepexTest do
     result = Viacepex.get("123")
     assert {:error, [cep: :incorrect_format]} == result
   end
+
+  test "cep accept integer input" do
+    use_cassette "olave_dutra" do
+      address = Viacepex.get!(91410490)
+      assert "Rua Olavo Dutra" == address.logradouro
+    end
+  end
 end
 
