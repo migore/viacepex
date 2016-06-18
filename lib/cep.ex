@@ -10,4 +10,13 @@ defmodule Viacepex.Cep do
     body
     |> Poison.decode!(keys: :atoms!)
   end
+
+  def validate(cep) do
+    case Regex.match?(~r/^\d{8}$/, cep) do
+      true ->
+        :ok
+      false ->
+        {:error, [cep: :incorrect_format]}
+    end
+  end
 end

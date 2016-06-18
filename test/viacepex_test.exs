@@ -8,5 +8,10 @@ defmodule ViacepexTest do
       assert "Praça da Sé" == address.logradouro
     end
   end
+
+  test "cep has an 8 digit format" do
+    result = Viacepex.get("123")
+    assert {:error, [cep: :incorrect_format]} == result
+  end
 end
 
