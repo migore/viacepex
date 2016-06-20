@@ -11,8 +11,11 @@ defmodule Viacepex do
   end
 
   def get!(cep) do
-    cep
-    |> get()
-    |> elem(1)
+    case get(cep) do
+      {:ok, cep} ->
+        cep
+      {:error, error} ->
+        raise ArgumentError, message: "Incorrect format!"
+    end
   end
 end

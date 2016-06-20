@@ -13,5 +13,11 @@ defmodule ViacepexTest do
     result = Viacepex.get("123")
     assert {:error, [cep: :incorrect_format]} == result
   end
+
+  test "get! raises en error" do
+    assert_raise ArgumentError, "Incorrect format!", fn ->
+      Viacepex.get!("123")
+    end
+  end
 end
 
