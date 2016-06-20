@@ -15,7 +15,7 @@ defmodule ViacepexTest do
   end
 
   test "get! raises en error" do
-    assert_raise ArgumentError, "Incorrect format!", fn ->
+    assert_raise ArgumentError, "Formato incorreto!", fn ->
       Viacepex.get!("123")
     end
   end
