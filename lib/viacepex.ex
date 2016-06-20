@@ -1,6 +1,6 @@
 defmodule Viacepex do
 
-  def get(cep) do
+  def get(cep) when is_bitstring(cep) do
     cep = "#{cep}"
     case Viacepex.Cep.validate(cep) do
       :ok ->
