@@ -29,7 +29,18 @@ defmodule Viacepex.Cep do
 
   def validate_search(state, city, street_name) do
     Keyword.new
+    |> validate_state(state)
     |> validate_city(city)
+  end
+
+  def validate_state(list, state) do
+    state_length = String.length(state)
+    cond do
+      state_length != 2 ->
+        Keyword.put(list, :state, :exactly_2_characters)
+      true ->
+        list
+    end
   end
 
   def validate_city(list, city) do

@@ -41,6 +41,11 @@ defmodule ViacepexTest do
     end
   end
 
+  test "check if state has exactly 2 chars before searching" do
+    search_result = Viacepex.search("R", "Alegre", "Olavo")
+    assert {:error,[state: :exactly_2_characters]} == search_result
+  end
+
   test "check if city has at least 3 chars before searching" do
     search_result = Viacepex.search("RS", "Al", "Olavo")
     assert {:error, [city: :at_least_3_characters]} == search_result
