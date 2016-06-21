@@ -26,8 +26,12 @@ defmodule Viacepex do
     case get(cep) do
       {:ok, cep} ->
         cep
-      {:error, error} ->
+      {:error, _} ->
         raise ArgumentError, message: "Formato incorreto!"
     end
+  end
+
+  def search(state, city, street_name) do
+    Viacepex.Cep.search(state, city, street_name)
   end
 end

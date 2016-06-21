@@ -19,4 +19,11 @@ defmodule Viacepex.Cep do
         {:error, [cep: :incorrect_format]}
     end
   end
+
+  def search(state, city, street_name) do
+    city = URI.encode(city)
+    HTTPoison.get!("https://viacep.com.br/ws/#{state}/#{city}/#{street_name}/json/").body
+    |> Poison.decode!(keys: :atoms!)
+    
+  end
 end

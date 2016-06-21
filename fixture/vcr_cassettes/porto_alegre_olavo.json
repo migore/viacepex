@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://viacep.com.br/ws/RS/Porto%20Alegre/Olavo/json/"
+    },
+    "response": {
+      "body": "[\n  {\n    \"cep\": \"91410-490\",\n    \"logradouro\": \"Rua Olavo Dutra\",\n    \"complemento\": \"\",\n    \"bairro\": \"Partenon\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"90040-310\",\n    \"logradouro\": \"Rua Olavo Bilac\",\n    \"complemento\": \"\",\n    \"bairro\": \"Azenha\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"90570-070\",\n    \"logradouro\": \"Rua Olavo Barreto Viana\",\n    \"complemento\": \"\",\n    \"bairro\": \"Moinhos de Vento\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"90570-901\",\n    \"logradouro\": \"Rua Olavo Barreto Viana\",\n    \"complemento\": \"36\",\n    \"bairro\": \"Moinhos de Vento\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"91180-370\",\n    \"logradouro\": \"Rua Reverendo Olavo Nunes\",\n    \"complemento\": \"\",\n    \"bairro\": \"Rubem Berta\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"90440-170\",\n    \"logradouro\": \"Rua Engenheiro Olavo Nunes\",\n    \"complemento\": \"\",\n    \"bairro\": \"Bela Vista\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"91150-034\",\n    \"logradouro\": \"Rua José Olavo do Nascimento\",\n    \"complemento\": \"\",\n    \"bairro\": \"Sarandi\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  },\n  {\n    \"cep\": \"91540-650\",\n    \"logradouro\": \"Acesso Olavo Domingos de Oliveira\",\n    \"complemento\": \"\",\n    \"bairro\": \"Jardim Carvalho\",\n    \"localidade\": \"Porto Alegre\",\n    \"uf\": \"RS\",\n    \"unidade\": \"\",\n    \"ibge\": \"4314902\",\n    \"gia\": \"\"\n  }\n]",
+      "headers": {
+        "Server": "nginx/1.8.1",
+        "Date": "Tue, 21 Jun 2016 00:19:52 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Max-Age": "86400",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": "Content-Type, X-Request-With, X-Requested-By",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Expires": "Tue, 21 Jun 2016 01:19:52 GMT",
+        "Cache-Control": "max-age=3600"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

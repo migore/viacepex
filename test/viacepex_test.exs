@@ -19,5 +19,12 @@ defmodule ViacepexTest do
       Viacepex.get!("123")
     end
   end
+
+  test "search find a list of possible addresses" do
+    use_cassette "porto_alegre_olavo" do
+      search_result = Viacepex.search("RS", "Porto Alegre", "Olavo")
+      assert Enum.count(search_result) == 8
+    end
+  end
 end
 
