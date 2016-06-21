@@ -32,6 +32,12 @@ defmodule Viacepex do
   end
 
   def search(state, city, street_name) do
-    Viacepex.Cep.search(state, city, street_name)
+    validation_result = Viacepex.Cep.validate_search(state, city, street_name)
+    cond do
+      Enum.count(validation_result) == 0 ->
+        {:ok, Viacepex.Cep.search(state, city, street_name)}
+      true ->
+        {:error, validation_result}
+    end
   end
 end

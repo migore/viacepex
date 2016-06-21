@@ -26,4 +26,19 @@ defmodule Viacepex.Cep do
     HTTPoison.get!("https://viacep.com.br/ws/#{state}/#{city}/#{street_name}/json/").body
     |> Poison.decode!(keys: :atoms!)
   end
+
+  def validate_search(state, city, street_name) do
+    Keyword.new
+    |> validate_city(city)
+  end
+
+  def validate_city(list, city) do
+    city_length = String.length(city)
+    cond do
+      city_length < 3 ->
+        Keyword.put(list, :city, :at_least_3_characters)
+      true ->
+        list
+    end
+  end
 end
