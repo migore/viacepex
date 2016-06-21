@@ -50,5 +50,10 @@ defmodule ViacepexTest do
     search_result = Viacepex.search("RS", "Al", "Olavo")
     assert {:error, [city: :at_least_3_characters]} == search_result
   end
+
+  test "check if street name has at least 3 chars before searching" do
+    search_result = Viacepex.search("RS", "Porto Alegre", "Ol")
+    assert {:error, [street: :at_least_3_characters]} == search_result
+  end
 end
 

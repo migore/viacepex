@@ -31,6 +31,7 @@ defmodule Viacepex.Cep do
     Keyword.new
     |> validate_state(state)
     |> validate_city(city)
+    |> validate_street(street_name)
   end
 
   def validate_state(list, state) do
@@ -48,6 +49,16 @@ defmodule Viacepex.Cep do
     cond do
       city_length < 3 ->
         Keyword.put(list, :city, :at_least_3_characters)
+      true ->
+        list
+    end
+  end
+
+  def validate_street(list, street_name) do
+    street_length = String.length(street_name)
+    cond do
+      street_length < 3 ->
+        Keyword.put(list, :street, :at_least_3_characters)
       true ->
         list
     end
