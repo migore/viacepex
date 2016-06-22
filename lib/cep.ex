@@ -34,7 +34,7 @@ defmodule Viacepex.Cep do
     |> validate_street(street_name)
   end
 
-  def validate_state(list, state) do
+  defp validate_state(list, state) do
     state_length = String.length(state)
     cond do
       state_length != 2 ->
@@ -44,7 +44,7 @@ defmodule Viacepex.Cep do
     end
   end
 
-  def validate_city(list, city) do
+  defp validate_city(list, city) do
     city_length = String.length(city)
     cond do
       city_length < 3 ->
@@ -54,7 +54,7 @@ defmodule Viacepex.Cep do
     end
   end
 
-  def validate_street(list, street_name) do
+  defp validate_street(list, street_name) do
     street_length = String.length(street_name)
     cond do
       street_length < 3 ->
