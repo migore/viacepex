@@ -22,8 +22,9 @@ defmodule ViacepexTest do
 
   test "search find a list of possible addresses" do
     use_cassette "alegre_olavo" do
-      {:ok, search_result} = Viacepex.search("RS", "Alegre", "Olavo")
+      {:ok, search_result = [first_item | _]} = Viacepex.search("RS", "Alegre", "Olavo")
       assert Enum.count(search_result) == 8
+      assert first_item.logradouro == "Rua Olavo Dutra"
     end
   end
 
