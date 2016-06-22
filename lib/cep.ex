@@ -1,14 +1,8 @@
 defmodule Viacepex.Cep do
-  use HTTPoison.Base
-  defstruct [:cep, :logradouro, :complemento, :bairro, :localidade, :uf, :unidade, :ibge, :gia]
 
-  def process_url(cep) do
-    "https://viacep.com.br/ws/#{cep}/json/"
-  end
-
-  def process_response_body(body) do
-    body
-    |> Poison.decode!(keys: :atoms!)
+  def get(cep) do
+    HTTPoison.get!("https://viacep.com.br/ws/#{cep}/json/").body
+    |> Poison.decode!
   end
 
   def validate(cep) do
@@ -24,7 +18,7 @@ defmodule Viacepex.Cep do
     city = URI.encode(city)
     street_name = URI.encode(street_name)
     HTTPoison.get!("https://viacep.com.br/ws/#{state}/#{city}/#{street_name}/json/").body
-    |> Poison.decode!(keys: :atoms!)
+    |> Poison.decode!
   end
 
   def validate_search(state, city, street_name) do

@@ -5,7 +5,7 @@ defmodule ViacepexTest do
   test "simple cep request" do
     use_cassette "praca_da_se" do
       address = Viacepex.get!("01001000")
-      assert "Praça da Sé" == address.logradouro
+      assert "Praça da Sé" == address["logradouro"]
     end
   end
 
@@ -24,7 +24,7 @@ defmodule ViacepexTest do
     use_cassette "alegre_olavo" do
       {:ok, search_result = [first_item | _]} = Viacepex.search("RS", "Alegre", "Olavo")
       assert Enum.count(search_result) == 8
-      assert first_item.logradouro == "Rua Olavo Dutra"
+      assert first_item["logradouro"] == "Rua Olavo Dutra"
     end
   end
 

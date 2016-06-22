@@ -12,7 +12,7 @@ defmodule Viacepex do
     cep = "#{cep}"
     case Viacepex.Cep.validate(cep) do
       :ok ->
-        {:ok, Viacepex.Cep.get!(cep).body}
+        {:ok, Viacepex.Cep.get(cep)}
       errors ->
         errors
     end
