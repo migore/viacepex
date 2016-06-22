@@ -31,6 +31,13 @@ defmodule Viacepex do
     end
   end
 
+  @doc """
+    Search for state, city, street in Viacep API
+
+    `state` must be a two letter string, a Brazil UF, or the result
+    will be empty. `city` and `street_name` must be at least three characters long.
+  """
+  @spec search(String.t, String.t, String.t) :: {:ok, list} | {:error, list}
   def search(state, city, street_name) do
     validation_result = Viacepex.Cep.validate_search(state, city, street_name)
     cond do
