@@ -41,7 +41,8 @@ defmodule Viacepex do
     will be empty. `city` and `street_name` must be at least three characters long.
   """
   @spec search(String.t, String.t, String.t) :: {:ok, list} | {:error, list}
-  def search(state, city, street_name) do
+  def search(state, city, street_name)
+  when is_bitstring(state) and is_bitstring(city) and is_bitstring(street_name) do
     validation_result = Viacepex.Cep.validate_search(state, city, street_name)
     cond do
       Enum.count(validation_result) == 0 ->
@@ -49,5 +50,9 @@ defmodule Viacepex do
       true ->
         {:error, validation_result}
     end
+  end
+
+  def search(_, _, _) do
+    raise ArgumentError, message: "All parameters must be String.t"
   end
 end

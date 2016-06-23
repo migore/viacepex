@@ -62,5 +62,11 @@ defmodule ViacepexTest do
     search_result = Viacepex.search("RS", "Porto Alegre", "Ol")
     assert {:error, [street: :at_least_3_characters]} == search_result
   end
+
+  test "search with anything but strings raises an informative error" do
+    assert_raise ArgumentError, "All parameters must be String.t", fn ->
+      Viacepex.search(1,2,3)
+    end
+  end
 end
 
