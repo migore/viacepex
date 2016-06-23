@@ -20,6 +20,12 @@ defmodule ViacepexTest do
     end
   end
 
+  test "get with anything but a string raises an informative error" do
+    assert_raise ArgumentError, "Only string is accepted", fn ->
+      Viacepex.get(123)
+    end
+  end
+
   test "search find a list of possible addresses" do
     use_cassette "alegre_olavo" do
       {:ok, search_result = [first_item | _]} = Viacepex.search("RS", "Alegre", "Olavo")

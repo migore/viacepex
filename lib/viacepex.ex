@@ -17,6 +17,9 @@ defmodule Viacepex do
         errors
     end
   end
+  def get(_) do
+    raise ArgumentError, message: "Only string is accepted"
+  end
 
   @doc """
     Same as `get/1` but raises an error if cep is format is incorrect
