@@ -1,7 +1,10 @@
 defmodule Viacepex.Cep do
 
+  @base_url "https://viacep.com.br/ws/"
+  @format "json"
+
   def get(cep) do
-    HTTPoison.get!("https://viacep.com.br/ws/#{cep}/json/").body
+    HTTPoison.get!(@base_url <> "#{cep}/#{@format}/").body
     |> Poison.decode!
   end
 
@@ -17,7 +20,7 @@ defmodule Viacepex.Cep do
   def search(state, city, street_name) do
     city = URI.encode(city)
     street_name = URI.encode(street_name)
-    HTTPoison.get!("https://viacep.com.br/ws/#{state}/#{city}/#{street_name}/json/").body
+    HTTPoison.get!(@base_url <> "#{state}/#{city}/#{street_name}/#{@format}/").body
     |> Poison.decode!
   end
 
