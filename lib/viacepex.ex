@@ -17,6 +17,7 @@ defmodule Viacepex do
         errors
     end
   end
+
   def get(_) do
     raise ArgumentError, message: "Only string is accepted"
   end
@@ -42,7 +43,7 @@ defmodule Viacepex do
   """
   @spec search(String.t, String.t, String.t) :: {:ok, list} | {:error, list}
   def search(state, city, street_name)
-  when is_bitstring(state) and is_bitstring(city) and is_bitstring(street_name) do
+      when is_bitstring(state) and is_bitstring(city) and is_bitstring(street_name) do
     validation_result = Viacepex.Cep.validate_search(state, city, street_name)
     cond do
       Enum.count(validation_result) == 0 ->
