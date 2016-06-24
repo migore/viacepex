@@ -33,6 +33,14 @@ defmodule ViacepexTest do
     end
   end
 
+  test "get! raises exception when no cep was found" do
+    use_cassette "empty_cep_get" do
+      assert_raise Viacepex.NoResultsError, "Expected a result but got none", fn ->
+        Viacepex.get!("12312312")
+      end
+    end
+  end
+
   test "search find a list of possible addresses" do
     use_cassette "alegre_olavo" do
       {:ok, search_result = [first_item | _]} = Viacepex.search("RS", "Alegre", "Olavo")

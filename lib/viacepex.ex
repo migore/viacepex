@@ -30,6 +30,8 @@ defmodule Viacepex do
   @spec get!(String.t) :: map | no_return
   def get!(cep) do
     case get(cep) do
+      {:ok, nil} ->
+        raise Viacepex.NoResultsError, message: "Expected a result but got none"
       {:ok, cep} ->
         cep
       {:error, _} ->
