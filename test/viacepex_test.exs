@@ -26,6 +26,13 @@ defmodule ViacepexTest do
     end
   end
 
+  test "get return nil when no cep was found" do
+    use_cassette "empty_cep_get" do
+      {:ok, result} = Viacepex.get("12312312")
+      assert nil == result
+    end
+  end
+
   test "search find a list of possible addresses" do
     use_cassette "alegre_olavo" do
       {:ok, search_result = [first_item | _]} = Viacepex.search("RS", "Alegre", "Olavo")

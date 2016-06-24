@@ -9,14 +9,16 @@ defmodule Viacepex do
   """
   @spec get(String.t) :: {:ok, map} | {:error, list}
   def get(cep) when is_bitstring(cep) do
-    cep = "#{cep}"
     case Viacepex.Cep.validate(cep) do
       :ok ->
-        {:ok, Viacepex.Cep.get(cep)}
+        {:ok, Viacepex.Cep.get(cep) |> one()}
       errors ->
         errors
     end
   end
+
+  defp one(%{"erro" => true}), do: nil
+  defp one(cep), do: cep
 
   def get(_) do
     raise ArgumentError, message: "Only string is accepted"
