@@ -7,7 +7,7 @@ defmodule Viacepex do
 
       * `:incorrect_format`  - the format is not valid, the correct format is "\d{8}"
   """
-  @spec get(String.t) :: {:ok, map} | {:error, list}
+  @spec get(String.t) :: {:ok, map | nil} | {:error, list}
   def get(cep) when is_bitstring(cep) do
     case Viacepex.Cep.validate(cep) do
       :ok ->
