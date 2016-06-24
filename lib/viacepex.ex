@@ -31,7 +31,7 @@ defmodule Viacepex do
       {:ok, cep} ->
         cep
       {:error, _} ->
-        raise ArgumentError, message: "Formato incorreto!"
+        raise ArgumentError, message: "Incorrect format!"
     end
   end
 
