@@ -17,12 +17,13 @@ defmodule Viacepex do
     end
   end
 
-  defp one(%{"erro" => true}), do: nil
-  defp one(cep), do: cep
-
   def get(_) do
     raise ArgumentError, message: "Only string is accepted"
   end
+
+  defp one(%{"erro" => true}), do: nil
+  defp one(cep), do: cep
+
 
   @doc """
     Same as `get/1` but raises an error if cep is format is incorrect
