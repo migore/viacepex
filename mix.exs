@@ -21,7 +21,7 @@ defmodule Viacepex.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.11"},
-      {:poison, "~> 2.0"},
+      {:poison, "~> 3.0"},
       {:exvcr, "~> 0.8", only: :test}
     ]
   end
