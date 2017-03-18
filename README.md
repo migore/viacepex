@@ -11,7 +11,7 @@ The package can be installed as:
 ```elixir
 def deps do
 [
- {:viacepex, github: "migore/viacepex"}
+ {:viacepex, "~> 0.0.2"}
 ]
 end
 ```
