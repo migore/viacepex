@@ -6,23 +6,23 @@ Viacepex is a simple wrapper around [viacep](https://viacep.com.br/) API.
 
 The package can be installed as:
 
-  1. Add viacepex to your list of dependencies in `mix.exs`:
+1. Add viacepex to your list of dependencies in `mix.exs`:
 
-    ```elixir
-    def deps do
-      [
-      	 {:viacepex, github: "migore/viacepex"}
-      ]
-    end
-    ```
+```elixir
+def deps do
+[
+ {:viacepex, github: "migore/viacepex"}
+]
+end
+```
 
-  2. Ensure viacepex is started before your application:
+2. (Before elixir 1.4 only) Ensure viacepex is started before your application:
 
-	```elixir
-    def application do
-      [applications: [:viacepex]]
-    end
-    ```
+```elixir
+def application do
+[applications: [:viacepex]]
+end
+```
 
 
 ## Quickstart
